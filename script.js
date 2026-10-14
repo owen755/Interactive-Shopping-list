@@ -3,6 +3,7 @@ const priceInput = document.getElementById('price-input');
 const addBtn = document.getElementById('add-btn');
 const shoppingList = document.getElementById('shopping-list');
 const clearBtn = document.getElementById('clear-btn');
+const totalCostDisplay = document.getElementById('total-cost');
 
 let items = JSON.parse(localStorage.getItem('shoppingItems')) || [];
 
@@ -12,8 +13,11 @@ function saveItems() {
 
 function render() {
     shoppingList.innerHTML = '';
+    let total = 0;
 
     items.forEach(item => {
+        total += item.price;
+
         const li = document.createElement('li');
         li.classList.add('item-card');
         if (item.purchased) {
@@ -51,7 +55,10 @@ function render() {
                 item.name = newName.trim();
             }
             if (newPrice !== null && newPrice.trim() !== '') {
-                item.price = newPrice.trim();
+                const parsedPrice = Number(newPrice.trim());
+                if (!isNaN(parsedPrice) && parsedPrice >= 0) {
+                    item.price = parsedPrice;
+                }
             }
             saveItems();
             render();
@@ -62,6 +69,8 @@ function render() {
 
         shoppingList.appendChild(li);
     });
+
+    totalCostDisplay.textContent = total.toFixed(2);
 }
 
 function addItem() {
@@ -72,10 +81,16 @@ function addItem() {
         return; 
     }
 
+    const priceNum = Number(priceStr);
+
+    if (isNaN(priceNum) || priceNum < 0) {
+        return;
+    }
+
     const newItem = {
         id: Date.now().toString(),
         name: name,
-        price: priceStr,
+        price: priceNum,
         purchased: false
     };
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Shopping List</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <main class="container">
+        <h1>Interactive Shopping List</h1>
+
+        <div class="input-group">
+            <input type="text" id="item-input" placeholder="What do you need?" autocomplete="on">
+            <input type="number" id="price-input" placeholder="Price (ksh)" min="0" step="5">
+            <button id="add-btn">Add Item</button>
+        </div>
+
+        
+        <ul id="shopping-list">
+        </ul>
+
+    
+        <div class="list-footer">
+            <p class="total-display">Total Cost: Ksh<span id="total-cost">0.00</span></p>
+            <button id="clear-btn" class="danger-btn">Clear List</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

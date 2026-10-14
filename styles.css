@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.container {
+    background: #d4cccc;
+    width: 180%;
+    max-width: 700px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color:black;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+#item-input {
+    flex: 2;
+}
+
+#price-input {
+    flex: 1;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #060606;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #45525b;
+    height: 100%;
+}
+
+#shopping-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.item-details {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+li.purchased {
+    background-color: #e8f5e9;
+    color: #7f8c8d;
+    text-decoration: line-through;
+    border-color: #c8e6c9;
+}
+
+.item-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn {
+    background-color: #f1c40f;
+    color: #333;
+}
+
+.edit-btn:hover {
+    background-color: #f39c12;
+}
+
+.list-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #eee;
+    padding-top: 16px;
+}
+
+.total-display {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.danger-btn {
+    background-color: black;
+}
+
+.danger-btn:hover {
+    background-color: red;
+}

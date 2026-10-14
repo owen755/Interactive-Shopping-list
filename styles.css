@@ -6,20 +6,37 @@
 }
 
 body {
-    background-color: #f4f4f9;
+    background-color: #f4f4f9; 
+    background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop');
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+
     color: #000000;
     display: flex;
     justify-content: center;
     padding-top: 50px;
 }
 
-.container {
-    background: #d4cccc;
+.main {
     width: 180%;
     max-width: 700px;
     padding: 24px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(164, 67, 67, 0.1), 0.1;
+    background: rgba(212, 204, 204, 0.85);
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+    
+    width: 180%;
+    max-width: 700px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(164, 67, 67, 0.1);
 }
 
 h1 {
@@ -130,4 +147,20 @@ li.purchased {
 
 .danger-btn:hover {
     background-color: red;
+}
+.edit-btn {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: background-color 0.2s;
+}
+
+.edit-btn:hover {
+    background-color: #333333;
 }
